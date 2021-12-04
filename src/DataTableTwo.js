@@ -61,7 +61,11 @@ const columns = [
 ];
 
 const options = {
-  filterType: "checkbox",
+  filter: true,
+  selectableRows: true,
+  filterType: "dropdown",
+  responsive: "stacked",
+  rowsPerPage: 10,
 };
 
 export function DataTableTwo() {
