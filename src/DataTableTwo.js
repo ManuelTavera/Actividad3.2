@@ -68,19 +68,19 @@ export function DataTableTwo() {
   const [empleadosData, setData] = useState([]);
 
   const handleInsert = async () => {
-    const { data, error } = await supabaseTwo
-      .from("empleados_dos")
-      .upsert(empleadosData);
+    const { data, error } = await supabaseOne
+      .from("Empleados")
+      .insert(empleadosData);
   };
 
   useEffect(() => {
     async function fetchData() {
-      let { data: Empleados, error } = await supabaseOne
-        .from("Empleados")
+      let { data: empleados_dos, error } = await supabaseTwo
+        .from("empleados_dos")
         .select("*");
 
-      setData(Empleados);
-      console.log("Empleados: ", Empleados);
+      setData(empleados_dos);
+      console.log("Empleados dos: ", empleados_dos);
     }
 
     fetchData();
@@ -100,7 +100,7 @@ export function DataTableTwo() {
           data={empleadosData}
           columns={columns}
           options={options}
-          title={"Base de dato dos"}
+          title={"Base de dato uno"}
         />
       </div>
     </>

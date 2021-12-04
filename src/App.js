@@ -59,8 +59,7 @@ function App() {
         <DataTableOne />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {/* <DataTableTwo /> */}
-        hola
+        <DataTableTwo />
       </TabPanel>
     </Container>
   );

@@ -70,7 +70,7 @@ export function DataTableOne() {
   const handleInsert = async () => {
     const { data, error } = await supabaseTwo
       .from("empleados_dos")
-      .upsert(empleadosData);
+      .insert(empleadosData);
   };
 
   useEffect(() => {
