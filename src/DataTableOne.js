@@ -68,9 +68,11 @@ export function DataTableOne() {
   const [empleadosData, setData] = useState([]);
 
   const handleInsert = async () => {
+    const newData = empleadosData.map(({ id, ...rest }) => rest);
+    console.log("newData: ", newData);
     const { data, error } = await supabaseTwo
       .from("empleados_dos")
-      .insert(empleadosData);
+      .insert(newData);
   };
 
   useEffect(() => {
